@@ -14,7 +14,7 @@
     flex-direction: column;
     text-align: center;
     padding: 2rem;
-    gap: 0.8rem;
+    gap: 1.2rem;
     width: 50%;
     align-items: center;
 }
@@ -22,6 +22,7 @@
 .hero-container h1 {
     font-size: var(--header-font-size);
     font-weight: 600;
+    color: var(--text-primary);
 }
 
 .hero-container p {
@@ -43,4 +44,45 @@
 
 .btn-primary:hover {
     background-color: var(--primary-hover);
+}
+
+/* FEATURE CARDS */
+
+.features-container {
+    display: flex;
+    width: 70%;
+    gap: 1rem;
+}
+
+.feature-card {
+    background-color: red;
+    padding: 1.4rem;
+    border-radius: 7px;
+    border: 0.5px solid var(--border);
+    background-color: var(--surface);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.card-icon {
+    background-color: #FFEDD5;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem;
+    border-radius: 5px;
+}
+
+
+.feature-card h3 {
+    font-size: var(--normal-font-size);
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.feature-card p {
+    font-size: var(--description-font-size);
+    color: var(--text-secondary);
 }
