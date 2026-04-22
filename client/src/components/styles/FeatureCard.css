@@ -1,0 +1,13 @@
+.card {
+    background-color: white;
+    height: 230px;
+    width: 200px;
+    border: 1.5px solid #e1e1e1;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.feature-img {
+    aspect-ratio: 1;
+    width: 30px;
+}
