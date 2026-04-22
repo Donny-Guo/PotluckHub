@@ -1,14 +1,21 @@
 import pg from 'pg'
+import dotenv from 'dotenv'
 
-const config = {
-    user: process.env.PGUSER,
-    password: process.env.PGPASSWORD,
-    host: process.env.PGHOST,
-    port: process.env.PGPORT,
-    database: process.env.PGDATABASE,
-    ssl: {
-        rejectUnauthorized: false
-    }
-}
+// Load the environment variables from the .env file
+dotenv.config({ path: '../.env' })
 
-export const pool = new pg.Pool(config);
+const { Pool } = pg
+
+const pool = new Pool({
+  // Use the .env variable FIRST, but if it doesn't exist, use the fallback string
+  host: process.env.PGHOST || 'your-fallback-host.render.com',
+  port: process.env.PGPORT || 5432,
+  user: process.env.PGUSER || 'your_db_username',
+  password: process.env.PGPASSWORD || 'your_db_password',
+  database: process.env.PGDATABASE || 'your_db_name',
+  ssl: { 
+      rejectUnauthorized: false 
+  }
+})
+
+export default pool
